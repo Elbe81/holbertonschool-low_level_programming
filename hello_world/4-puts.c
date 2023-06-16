@@ -2,12 +2,13 @@
  * Programmer Luis Rivera
  * 6-16-23.
  * 4-puts.c_file
- * Code that uses the function puts
- * to printout but not using printf.
  */
 
 #include <stdio.h>
 
+/*This code uses puts funtion to 
+ * printout instead of printf
+ * /
 int main(void)
 {
 
