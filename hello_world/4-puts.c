@@ -1,14 +1,15 @@
+
 /*
+ * File: 4-puts.c
  * Programmer Luis Rivera
- * 6-16-23.
- * 4-puts.c_file
  */
 
 #include <stdio.h>
 
 /**
- *This code uses puts funtion to printout
- *instead of printf
+ *main - Prints "Programming is like building a multilingual puzzle, follwed by a new line.
+ *
+ * Return: Always 0.
  */
 int main(void)
 {
