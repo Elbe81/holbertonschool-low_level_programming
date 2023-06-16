@@ -6,9 +6,10 @@
 
 #include <stdio.h>
 
-/*This code uses puts funtion to 
- * printout instead of printf
- * /
+/**
+ *This code uses puts funtion to printout
+ *instead of printf
+ */
 int main(void)
 {
 
