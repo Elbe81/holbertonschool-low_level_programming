@@ -2,7 +2,7 @@
  * Programmer Luis Rivera
  * 6-16-23.
  * 4-puts.c_file
- * Code that uses the function puts 
+ * Code that uses the function puts
  * to printout but not using printf.
  */
 
@@ -13,6 +13,6 @@ int main(void)
 
 	puts("\"Programming is like building a multilingual puzzle");
 
-	return 0;
+	return (0);
 
 }
