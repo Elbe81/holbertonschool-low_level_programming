@@ -2,6 +2,7 @@
  * File 0-Positive or negative
  * Programmer Luis Rivera
  */
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
