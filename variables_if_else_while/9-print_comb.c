@@ -11,11 +11,13 @@
  **/
 int main(void)
 {
-	int n = 10;
-	while (--n)
+	int number;
+
+	for (number = 0; number <= 9; number++)
 	{
-		putchar(n + '0');
-		if (n != 1)
+		putchar(number + '0');
+
+		if (number != 9)
 		{
 			putchar(',');
 			putchar(' ');
