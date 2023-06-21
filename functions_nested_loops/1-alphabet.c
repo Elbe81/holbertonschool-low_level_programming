@@ -2,10 +2,14 @@
  *File 1-Alphabet
  *Programmer Luis Rivera
  */
-#include <stdio.h>
 #include <main.h>
-
-void print_alphabet(void)
+/**
+ * main- function to print
+ * the alphabet
+ *
+ * Return: 0
+ **/
+void print_alphabet(void);
 {
 	char letter = 'a';
 
@@ -15,15 +19,4 @@ void print_alphabet(void)
 		letter++;
 	}
 	putchar('\n');
-}
-/**
- * main- This program displays the alphabet
- * using a function
- *
- * Return: 0
- **/
-int main(void)
-{
-	print_alphabet();
-	return (0);
 }
