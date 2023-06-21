@@ -9,14 +9,8 @@
  *
  * Return: 0
  **/
-void print_alphabet(void);
+int main(void)
 {
-	char letter = 'a';
-
-	while (letter <= 'z')
-	{
-		putchar(letter);
-		letter++;
-	}
-	putchar('\n');
+	print_alphabet(void);
+	return (0);
 }
