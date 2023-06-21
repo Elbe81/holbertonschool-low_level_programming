@@ -2,7 +2,7 @@
  *File 1-Alphabet
  *Programmer Luis Rivera
  */
-#include <main.h>
+#include "main.h"
 /**
  * main- function to print
  * the alphabet
@@ -11,6 +11,6 @@
  **/
 int main(void)
 {
-	print_alphabet(void);
+	print_alphabet();
 	return (0);
 }
