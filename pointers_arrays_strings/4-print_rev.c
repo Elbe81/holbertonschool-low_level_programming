@@ -1,17 +1,21 @@
 #include "main.h"
+
 /**
- * print_rev - Funtion prints a string
- * in reverse
- * @str: It is a pointer
- * Return: 0
+ * print_rev - Funtion that prints a string in reverse.
+ *
+ * @s: It is a pointer.
+ * Return: 0.
  */
-void print_rev(char *str)
+
+void print_rev(char *s)
 {
-	if (*str == '\0')
+	if (*s == '\0')
+
 	{
 		_putchar('\n');
 		return;
 	}
-	print_rev(str + 1);
-	_putchar(*str);
+
+	print_rev(s + 1);
+	_putchar(*s);
 }
