@@ -4,6 +4,7 @@
  *_strncat - Fuction to concatenate two string.
  *@dest: It is a pointer.
  *@src: It is a pointer.
+ *@n: variable parameter.
  *
  *Return: to string dest.
  */
