@@ -1,8 +1,7 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * memset - Function to fill memory with a constant.
+ * _memset - A function to fill memory with a constant.
  * @s: Pointer.
  * @b: Variable parameter
  * @n: Unsinged variable
