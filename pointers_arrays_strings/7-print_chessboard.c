@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _print_chessboard - A function to print the chessboard
+ * print_chessboard - A function to print the chessboard
  * @a: Is a pointer.
  *
  * Return: 0.
@@ -16,7 +16,10 @@ void print_chessboard(char (*a)[8])
 	{
 		for (j = 0; j < 8; j++)
 		{
-			printf("%c ", a[i][j]);
+			if (a[i][j] != ' ')
+			{
+				printf("%c", a[i][j]);
+			}
 		}
 		printf("\n");
 	}
