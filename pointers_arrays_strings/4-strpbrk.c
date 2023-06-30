@@ -19,7 +19,7 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (*s == *temp)
 			{
-				return s;
+				return (s);
 			}
 			temp++;
 		}
