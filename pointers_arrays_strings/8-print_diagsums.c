@@ -12,16 +12,25 @@
 
 void print_diagsums(int *a, int size)
 {
+	int x = 0, y = 0;
 	int i;
-	int sum1 = 0;
-	int sum2 = 0;
 
-	for (i = 0; i < size; i++)
-	{
-		sum1 += a[i * size + i];
-		sum2 += a[(i + 1) * size - (i + 1)];
-	}
+	for (i = 0; i < (size * size); i = (i + size + 1))
+		x = x + a[i];
+	for (i = size - 1; i < (size * size - 1); i = (i + size - 1))
+		y = y + a[i];
+	printf("%d, %d\n", x, y);
+}
+#include "main.h"
 
-	printf("Sum of main diagonal: %d\n", sum1);
-	printf("Sum of secondary diagonal: %d\n", sum2);
+/**
+ * set_string - sets value of pointer to a char
+ * @s: the string
+ * @to: the value to set it to
+ *
+ * Return: Always 0.
+ */
+void set_string(char **s, char *to)
+{
+	*s = to;
 }
