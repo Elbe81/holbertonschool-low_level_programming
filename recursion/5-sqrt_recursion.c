@@ -30,7 +30,16 @@ int _sqrt_helper(int n, int start, int end)
 	}
 	else if (square < n)
 	{
-		return (_sqrt_helper(n, mid + 1, end));
+		int sqrt = _sqrt_helper(n, mid + 1, end);
+
+		if (sqrt == -1)
+		{
+			return (mid);
+		}
+		else
+		{
+			return (sqrt);
+		}
 	}
 	else
 	{
