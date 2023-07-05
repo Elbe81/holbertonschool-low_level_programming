@@ -1,4 +1,7 @@
-/**Recursion Task Prototypes**/
+#ifndef MAIN_H
+#define MAIN_H
+
+int _putchar(char c);
 
 void _puts_recursion(char *s);
 
@@ -14,6 +17,12 @@ int _sqrt_recursion(int n);
 
 int is_prime_number(int n);
 
-int _putchar(char c);
+int is_palindrome(char *s);
 
-int _sqrt_helper(int n, int start, int end);
+int findsq(int n, int x);
+
+int findprime(int n, int x);
+
+int wildcmp(char *s1, char *s2);
+
+#endif /* MAIN_H */
