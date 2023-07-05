@@ -9,29 +9,22 @@
  */
 
 int is_prime_number(int n)
+
 {
-	int x = n / 2;
+	int i;
 
 	if (n <= 1)
+	{
 		return (0);
+	}
 
-	return (findprime(n, x));
-}
+	for (i = 2; i * i <= n; i++)
+	{
+		if (n % i == 0)
+		{
+			return (0);
+		}
+	}
 
-/**
- * findprime - tests if n is prime
- * @n: the integer
- * @x: a counter starting at half of n.
- *
- * Return: 1 if prime 0 if not
- */
-
-int findprime(int n, int x)
-{
-	if (x == 1)
-		return (1);
-	if (n % x == 0)
-		return (0);
-	x--;
-	return (findprime(n, x));
+	return (1);
 }
