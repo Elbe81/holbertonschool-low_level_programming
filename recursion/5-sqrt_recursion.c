@@ -6,11 +6,12 @@ int sqrt_recursive(int n, int start, int end);
  * _sqrt_recursion - Returns the natural square root of a number.
  * @n: The number to calculate the square root of.
  *
- * Return: The natural square root of n, or -1 if it
- * doesn't have a natural square root.
+ * Return: The natural square root of n, or -1
+ * if it doesn't have a natural square root.
  */
 
 int _sqrt_recursion(int n)
+
 {
 	if (n < 0)
 		return (-1);
@@ -23,17 +24,17 @@ int _sqrt_recursion(int n)
  * @start: The starting point of the range to search for the square root.
  * @end: The ending point of the range to search for the square root.
  *
- * Return: The natural square root of n, or -1
- * if it doesn't have a natural square root.
+ * Return: The natural square root of n, or -1 if
+ * it doesn't have a natural square root.
  */
 
 int sqrt_recursive(int n, int start, int end)
 
 {
-	int mid = (start + end) / 2;
-
 	if (start <= end)
 	{
+		int mid = start + (end - start) / 2;
+
 		if (mid * mid == n)
 			return (mid);
 		else if (mid * mid > n)
