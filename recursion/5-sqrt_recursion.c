@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 int sqrt_recursive(int n, int start, int end);
 
