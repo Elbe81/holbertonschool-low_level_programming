@@ -6,6 +6,7 @@
  * string_nconcat - A function that concatenates two strings.
  *@s1: Pointer as a parameter.
  *@s2: Pointer as a parameter.
+ *@n: Unsigned variable as a parameter.
  *
  * Return: To result.
  */
