@@ -11,6 +11,7 @@
 static dlistint_t *create_dnodeint(int n)
 {
 	dlistint_t *new_node = malloc(sizeof(dlistint_t));
+
 	if (!new_node)
 		return (NULL);
 	new_node->n = n;
@@ -35,11 +36,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i;
 
 	if (!h)
-		/* Check if the pointer to the head is NULL */
 		return (NULL);
 
 	if (idx == 0)
-		/* Insert at the beginning */
 	{
 		new_node = create_dnodeint(n);
 		if (!new_node)
@@ -50,21 +49,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		*h = new_node;
 		return (new_node);
 	}
-
 	/* Traverse the list to the position before the insertion point */
 	for (i = 0; i < idx - 1; i++)
 	{
 		if (!current_node)
-			/* If the list is not long enough, return NULL */
 			return (NULL);
 		current_node = current_node->next;
 	}
 
 	if (!current_node)
-		/* If the list is not long enough, return NULL */
 		return (NULL);
 
-	/* Insert the new node */
 	new_node = create_dnodeint(n);
 	if (!new_node)
 		return (NULL);
