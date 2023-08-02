@@ -24,6 +24,9 @@ size_t print_dlistint(const dlistint_t *h);
 
 size_t dlistint_len(const dlistint_t *h);
 
+<<<<<<< HEAD
 dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 
+=======
+>>>>>>> 179f58909be2b457fc331f07639cf4c74116e879
 #endif /* LISTS_H */
