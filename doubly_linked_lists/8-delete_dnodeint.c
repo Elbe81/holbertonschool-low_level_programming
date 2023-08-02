@@ -35,7 +35,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		current_node = current_node->next;
 	}
 
-	if (!current_node || !(current_node->next)) /* If the index is beyond the end of the list */
+	if (!current_node || !(current_node->next))
+		/* If the index is beyond the end of the list */
 		return (-1);
 
 	temp = current_node->next;
