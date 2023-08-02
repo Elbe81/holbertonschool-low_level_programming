@@ -21,8 +21,8 @@ dlistint_t *create_dnodeint(int n)
 }
 
 /**
- * insert_at_beginning - Insert a new node
- *at the beginning of a doubly linked list.
+ * insert_at_beginning - Insert a new node at
+ *the beginning of a doubly linked list.
  * @h: Pointer to the pointer of the head node.
  * @new_node: Pointer to the new node to be inserted.
  */
@@ -35,11 +35,33 @@ void insert_at_beginning(dlistint_t **h, dlistint_t *new_node)
 }
 
 /**
- * insert_dnodeint_at_index - Insert a new node
- * at a given position in a doubly linked list.
+ * insert_at_end - Insert a new node at the end of a doubly linked list.
  * @h: Pointer to the pointer of the head node.
- * @idx: Index of the position where the new node should
- *be inserted (starting from 0).
+ * @new_node: Pointer to the new node to be inserted.
+ */
+void insert_at_end(dlistint_t **h, dlistint_t *new_node)
+{
+	dlistint_t *current;
+
+	if (*h == NULL)
+	{
+		*h = new_node;
+		return;
+	}
+
+	current = *h;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new_node;
+	new_node->prev = current;
+}
+
+/**
+ * insert_dnodeint_at_index - Insert a new node
+ *at a given position in a doubly linked list.
+ * @h: Pointer to the pointer of the head node.
+ * @idx: Index of the position where the new
+ *node should be inserted (starting from 0).
  * @n: Integer value to be added in the new node.
  *
  * Return: Address of the new node, or NULL if it failed.
@@ -80,13 +102,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (current == NULL)
 	{
 		/* Insert at the end */
-		new_node->prev = NULL;
-		new_node->next = NULL;
-		current = *h;
-		while (current->next != NULL)
-			current = current->next;
-		current->next = new_node;
-		new_node->prev = current;
+		insert_at_end(h, new_node);
 	}
 	else
 	{
