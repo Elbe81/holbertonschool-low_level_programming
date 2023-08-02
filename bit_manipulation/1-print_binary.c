@@ -3,27 +3,26 @@
 /**
  * print_binary - Prints the binary representation of a number.
  * @n: The number to be printed in binary.
- *
- * Return: None.
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1;
-	int bit_count = sizeof(unsigned long int) * 8; /* Number of bits in unsigned long int */
+	int flag = 0;
+	unsigned long int i;
 
-	mask = mask << (bit_count - 1); /* Move the mask to the most significant bit */
-
-	while (bit_count > 0)
+	if (n == 0)
 	{
-		if (n & mask) /* Check if the bit is set (1) at the current position */
-			_putchar('1');
-		else
-			_putchar('0');
-
-		mask = mask >> 1; /* Right shift the mask to check the next bit */
-		bit_count--;
+		_putchar('0');
+		return;
 	}
 
-	_putchar('\n');
+	for (i = 1UL << (sizeof(unsigned long int) * 8 - 1); i > 0; i >>= 1)
+	{
+		if (n & i)
+		{
+			_putchar('1');
+			flag = 1;
+		}
+		else if (flag)
+			_putchar('0');
+	}
 }
-
