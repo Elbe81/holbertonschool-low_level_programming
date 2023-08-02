@@ -1,117 +1,67 @@
-#include <stdlib.h>
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * create_dnodeint - Create a new doubly linked list node.
- * @n: Integer value to be added in the new node.
+ * insert_dnodeint_at_index - Inserts a new node
+ * at a given position in a doubly linked list
+ * @h: Pointer to the pointer to the head of the list
+ * @idx: Index where the new node should be added (starts at 0)
+ * @n: Value to be stored in the new node
  *
- * Return: Address of the new node, or NULL if it failed.
- */
-dlistint_t *create_dnodeint(int n)
-{
-	dlistint_t *new_node = malloc(sizeof(dlistint_t));
-	if (new_node == NULL)
-		return (NULL);
-
-	new_node->n = n;
-	new_node->prev = NULL;
-	new_node->next = NULL;
-
-	return (new_node);
-}
-
-/**
- * insert_at_beginning - Insert a new node at
- *the beginning of a doubly linked list.
- * @h: Pointer to the pointer of the head node.
- * @new_node: Pointer to the new node to be inserted.
- */
-void insert_at_beginning(dlistint_t **h, dlistint_t *new_node)
-{
-	new_node->next = *h;
-	if (*h != NULL)
-		(*h)->prev = new_node;
-	*h = new_node;
-}
-
-/**
- * insert_at_end - Insert a new node at the end of a doubly linked list.
- * @h: Pointer to the pointer of the head node.
- * @new_node: Pointer to the new node to be inserted.
- */
-void insert_at_end(dlistint_t **h, dlistint_t *new_node)
-{
-	dlistint_t *current;
-
-	if (*h == NULL)
-	{
-		*h = new_node;
-		return;
-	}
-
-	current = *h;
-	while (current->next != NULL)
-		current = current->next;
-	current->next = new_node;
-	new_node->prev = current;
-}
-
-/**
- * insert_dnodeint_at_index - Insert a new node
- *at a given position in a doubly linked list.
- * @h: Pointer to the pointer of the head node.
- * @idx: Index of the position where the new
- *node should be inserted (starting from 0).
- * @n: Integer value to be added in the new node.
- *
- * Return: Address of the new node, or NULL if it failed.
+ * Return: Address of the new node, or NULL if it failed
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node, *current;
-	unsigned int count = 0;
+	dlistint_t *new_node, *current_node = *h;
+	unsigned int i = 0;
 
-	if (h == NULL)
+	if (!h)
+		/* Check if the pointer to the head is NULL */
 		return (NULL);
 
-	new_node = create_dnodeint(n);
-	if (new_node == NULL)
+	/* Create a new node and assign its value */
+	new_node = malloc(sizeof(dlistint_t));
+	if (!new_node)
 		return (NULL);
+	new_node->n = n;
 
 	if (idx == 0)
-	{
 		/* Insert at the beginning */
-		insert_at_beginning(h, new_node);
+	{
+		new_node->prev = NULL;
+		new_node->next = current_node;
+		if (current_node)
+			current_node->prev = new_node;
+		*h = new_node;
 		return (new_node);
 	}
 
-	current = *h;
-	while (current != NULL && count < idx)
+	/* Traverse the list to the position before the insertion point */
+	while (i < idx - 1)
 	{
-		current = current->next;
-		count++;
+		if (!current_node)
+			/* If the list is not long enough, return NULL */
+		{
+			free(new_node);
+			return (NULL);
+		}
+		current_node = current_node->next;
+		i++;
 	}
 
-	if (current == NULL && count != idx)
+	if (!current_node)
+		/* If the list is not long enough, return NULL */
 	{
-		/* Index is out of bounds, can't insert */
 		free(new_node);
 		return (NULL);
 	}
 
-	if (current == NULL)
-	{
-		/* Insert at the end */
-		insert_at_end(h, new_node);
-	}
-	else
-	{
-		/* Insert in the middle */
-		new_node->prev = current->prev;
-		new_node->next = current;
-		current->prev->next = new_node;
-		current->prev = new_node;
-	}
+	/* Insert the new node */
+	new_node->prev = current_node;
+	new_node->next = current_node->next;
+	if (current_node->next)
+		current_node->next->prev = new_node;
+	current_node->next = new_node;
 
 	return (new_node);
 }
