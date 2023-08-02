@@ -25,8 +25,6 @@ unsigned int binary_to_uint(const char *b)
 		if (b[i] == '0')
 			result = result << 1;
 
-		/* Left shift the result by 1 and set the last
-		 *bit to 1 if the current char is '1' */
 		else if (b[i] == '1')
 			result = (result << 1) | 1;
 
