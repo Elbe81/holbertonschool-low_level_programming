@@ -1,28 +1,40 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-void reset_to_98(int *n);
-
-void swap_int(int *a, int *b);
-
-int _strlen(char *s);
-
-void _puts(char *str);
-
 int _putchar(char c);
 
-void print_rev(char *s);
+/* 0-strcat.c */
+char *_strcat(char *dest, char *src);
 
-void rev_string(char *s);
+/* 1-strncat.c */
+char *_strncat(char *dest, char *src, int n);
 
-void puts2(char *str);
+/* 2-strncpy.c */
+char *_strncpy(char *dest, char *src, int n);
 
-void puts_half(char *str);
+/* 3-strcmp.c */
+int _strcmp(char *s1, char *s2);
 
-void print_array(int *a, int n);
+/* 4-rev_array.c */
+void reverse_array(int *a, int n);
 
-char *_strcpy(char *dest, char *src);
+/* 5-string_toupper.c */
+char *string_toupper(char *);
 
-int _atoi(char *s);
+/* 6-cap_string.c */
+char *cap_string(char *);
 
-#endif /* MAIN_H */
+/* 7-leet.c */
+char *leet(char *);
+
+/* 8-rot13.c */
+char *rot13(char *);
+
+/* 101-magic.c */
+void print_number(int n);
+
+/* 102-infinite_add.c */
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
+
+/* 103-print_buffer.c */
+void print_buffer(char *b, int size);
+
+int _strlen(char *); 
+
