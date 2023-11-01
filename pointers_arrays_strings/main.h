@@ -1,40 +1,22 @@
+#include <stdio.h>
+#include <stddef.h>
+
 int _putchar(char c);
 
-/* 0-strcat.c */
-char *_strcat(char *dest, char *src);
+char *_memset(char *s, char b, unsigned int n);
 
-/* 1-strncat.c */
-char *_strncat(char *dest, char *src, int n);
+char *_memcpy(char *dest, char *src, unsigned int n);
 
-/* 2-strncpy.c */
-char *_strncpy(char *dest, char *src, int n);
+char *_strchr(char *s, char c);
 
-/* 3-strcmp.c */
-int _strcmp(char *s1, char *s2);
+unsigned int _strspn(char *s, char *accept);
 
-/* 4-rev_array.c */
-void reverse_array(int *a, int n);
+char *_strpbrk(char *s, char *accept);
 
-/* 5-string_toupper.c */
-char *string_toupper(char *);
+char *_strstr(char *haystack, char *needle);
 
-/* 6-cap_string.c */
-char *cap_string(char *);
+void print_chessboard(char (*a)[8]);
 
-/* 7-leet.c */
-char *leet(char *);
+void print_diagsums(int *a, int size);
 
-/* 8-rot13.c */
-char *rot13(char *);
-
-/* 101-magic.c */
-void print_number(int n);
-
-/* 102-infinite_add.c */
-char *infinite_add(char *n1, char *n2, char *r, int size_r);
-
-/* 103-print_buffer.c */
-void print_buffer(char *b, int size);
-
-int _strlen(char *); 
-
+void set_string(char **s, char *to);
