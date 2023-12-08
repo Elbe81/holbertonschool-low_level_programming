@@ -12,9 +12,9 @@
 
 typedef struct hash_node
 {
- char *key;
- char *value;
- struct hash_node *next;
+char *key;
+char *value;
+struct hash_node *next;
 } hash_node_t;
 
 /**
@@ -25,8 +25,8 @@ typedef struct hash_node
 
 typedef struct hash_table
 {
- size_t size;
- hash_node_t **array;
+size_t size;
+hash_node_t **array;
 } hash_table_t;
 
 /* Function prototypes */
