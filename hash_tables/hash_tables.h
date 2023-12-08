@@ -3,19 +3,30 @@
 
 #include <stdlib.h>
 
-/* Struct for hash node */
+/**
+ * struct hash_node - Node structure for a hash table
+ * @key: The key (string) associated with the node
+ * @value: The value (string) associated with the key
+ * @next: Pointer to the next node in case of collisions
+ */
+
 typedef struct hash_node
 {
-  char *key;
-  char *value;
-  struct hash_node *next;
+ char *key;
+ char *value;
+ struct hash_node *next;
 } hash_node_t;
 
-/* Struct for hash table */
+/**
+ * struct hash_table - Hash table structure
+ * @size: The size of the array in the hash table
+ * @array: An array of pointers to hash nodes
+ */
+
 typedef struct hash_table
 {
-  size_t size;
-  hash_node_t **array;
+ size_t size;
+ hash_node_t **array;
 } hash_table_t;
 
 /* Function prototypes */
